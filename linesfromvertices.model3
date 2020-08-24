@@ -196,7 +196,7 @@
         <Option type="List" name="EXPRESSION">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="QString" name="static_value" value=" if(@Inverseallevenlineparts,&#xd;&#xa;reverse( $geometry),$geometry)"/>
+            <Option type="QString" name="static_value" value="if(@Inverseallevenlineparts,&#xd;&#xa;if(part_num % 2 = 0,reverse($geometry),$geometry),if(part_num % 2 = 0,$geometry,reverse($geometry)))"/>
           </Option>
         </Option>
         <Option type="List" name="INPUT">
@@ -375,7 +375,7 @@
       <Option type="QString" name="parameter_type" value="number"/>
     </Option>
     <Option type="Map" name="Inverseallevenlineparts">
-      <Option type="bool" name="default" value="true"/>
+      <Option type="bool" name="default" value="false"/>
       <Option type="QString" name="description" value="Inverse all even line parts (if not checked, all odd parts will be reversed)"/>
       <Option type="int" name="flags" value="0"/>
       <Option name="metadata"/>
