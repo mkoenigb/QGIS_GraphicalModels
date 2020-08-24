@@ -196,7 +196,7 @@
         <Option type="List" name="EXPRESSION">
           <Option type="Map">
             <Option type="int" name="source" value="2"/>
-            <Option type="QString" name="static_value" value=" if(@Inverseallevenlineparts,&#xd;&#xa; if(part_num %2 = 1, reverse( $geometry),$geometry),&#xd;&#xa; if(part_num %2 = 1,  $geometry,reverse($geometry))&#xd;&#xa; )"/>
+            <Option type="QString" name="static_value" value=" if(@Inverseallevenlineparts,&#xd;&#xa;reverse( $geometry),$geometry)"/>
           </Option>
         </Option>
         <Option type="List" name="INPUT">
