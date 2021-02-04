@@ -87,18 +87,8 @@
           <Option name="component_pos_x" type="double" value="1024"/>
           <Option name="component_pos_y" type="double" value="512"/>
           <Option name="component_width" type="double" value="200"/>
-          <Option name="default_value" type="Map">
-            <Option name="class" type="QString" value="QgsProcessingOutputLayerDefinition"/>
-            <Option name="create_options" type="Map">
-              <Option name="fileEncoding" type="QString" value="System"/>
-            </Option>
-            <Option name="sink" type="Map">
-              <Option name="active" type="bool" value="true"/>
-              <Option name="type" type="int" value="1"/>
-              <Option name="val" type="QString" value=""/>
-            </Option>
-          </Option>
-          <Option name="mandatory" type="bool" value="true"/>
+          <Option name="default_value" type="invalid"/>
+          <Option name="mandatory" type="bool" value="false"/>
           <Option name="name" type="QString" value="Reclassified_Raster"/>
           <Option name="output_name" type="QString" value="OUTPUT"/>
           <Option name="outputs_collapsed" type="bool" value="true"/>
@@ -146,7 +136,7 @@
         </Option>
         <Option name="TABLE" type="List">
           <Option type="Map">
-            <Option name="expression" type="QString" value="array_to_string(array_foreach( -- NEST ARRAYS&#xa;&#xa;-- ADD LOWER CLASS VALUES&#xa;array_remove_at(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses-1),@NClasses-1)&#xa;,@element&#xa;&#xa;-- ADD UPPER CLASS VALUES&#xa;-- concat&#xa;||','||&#xa;-- Array of upper classes&#xa;array_get(&#xa;array_filter(&#xa;array_foreach(&#xa;generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses-1)&#xa;,&#xa;array_get(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses-1),&#xa;array_find(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses-1),@element)+1)&#xa;),@element is not null)&#xa;,&#xa;-- get the index of initial array to insert at this position&#xa;array_find(&#xa;array_remove_at(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses-1),@NClasses-1)&#xa;,@element))&#xa;&#xa;-- ADD CATEGORY VALUES&#xa;-- concat&#xa;||','||&#xa;-- array of class values&#xa;array_get(generate_series(1,@NClasses),&#xa;-- get the index of initial array to insert at this position&#xa;array_find(&#xa;array_remove_at(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses-1),@NClasses-1)&#xa;,@element))&#xa;&#xa;)) -- closing array nesting"/>
+            <Option name="expression" type="QString" value="array_to_string(array_foreach( -- NEST ARRAYS&#xa;&#xa;-- ADD LOWER CLASS VALUES&#xa;array_remove_at(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses),@NClasses)&#xa;,@element&#xa;&#xa;-- ADD UPPER CLASS VALUES&#xa;-- concat&#xa;||','||&#xa;-- Array of upper classes&#xa;array_get(&#xa;array_filter(&#xa;array_foreach(&#xa;generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses-1)&#xa;,&#xa;array_get(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses),&#xa;array_find(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses-1),@element)+1)&#xa;),@element is not null)&#xa;,&#xa;-- get the index of initial array to insert at this position&#xa;array_find(&#xa;array_remove_at(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses),@NClasses)&#xa;,@element))&#xa;&#xa;-- ADD CATEGORY VALUES&#xa;-- concat&#xa;||','||&#xa;-- array of class values&#xa;array_get(generate_series(1,@NClasses),&#xa;-- get the index of initial array to insert at this position&#xa;array_find(&#xa;array_remove_at(generate_series(@Raster_layer_statistics_MIN,@Raster_layer_statistics_MAX,(@Raster_layer_statistics_MAX-@Raster_layer_statistics_MIN)/@NClasses),@NClasses)&#xa;,@element))&#xa;&#xa;)) -- closing array nesting"/>
             <Option name="source" type="int" value="3"/>
           </Option>
         </Option>
@@ -190,18 +180,7 @@
     </Option>
     <Option name="native:reclassifybytable_1:Reclassified_Raster" type="Map">
       <Option name="create_by_default" type="bool" value="true"/>
-      <Option name="default" type="QgsProcessingOutputLayerDefinition">
-        <Option type="Map">
-          <Option name="create_options" type="Map">
-            <Option name="fileEncoding" type="QString" value="System"/>
-          </Option>
-          <Option name="sink" type="Map">
-            <Option name="active" type="bool" value="true"/>
-            <Option name="type" type="int" value="1"/>
-            <Option name="val" type="QString" value=""/>
-          </Option>
-        </Option>
-      </Option>
+      <Option name="default" type="invalid"/>
       <Option name="description" type="QString" value="Reclassified_Raster"/>
       <Option name="flags" type="int" value="0"/>
       <Option name="help" type="QString" value=""/>
