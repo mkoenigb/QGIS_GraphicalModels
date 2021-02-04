@@ -48,11 +48,11 @@
       <Option name="color" type="QString" value=""/>
       <Option name="comment" type="Map">
         <Option name="color" type="QString" value=""/>
-        <Option name="component_description" type="QString" value=""/>
-        <Option name="component_height" type="double" value="60"/>
-        <Option name="component_pos_x" type="double" value="1007"/>
-        <Option name="component_pos_y" type="double" value="353"/>
-        <Option name="component_width" type="double" value="100"/>
+        <Option name="component_description" type="QString" value="The idea:&#xa;&#xa;-- CREATE VARIABLES&#xa;with_variable('rmin',1,(&#xa;with_variable('rmax',100,(&#xa;with_variable('nclasses',10,&#xa;&#xa;-- NEST ARRAYS&#xa;array_to_string(array_foreach( &#xa;&#xa;-- ADD LOWER CLASS VALUES&#xa;array_remove_at(generate_series(@rmin,@rmax,(@rmax-@rmin)/@nclasses-1),@nclasses-1)&#xa;,@element&#xa;&#xa;-- ADD UPPER CLASS VALUES&#xa;-- concat&#xa;||','||&#xa;-- array of upper classes&#xa;array_get(&#xa;array_filter(&#xa;array_foreach(&#xa;generate_series(@rmin,@rmax,(@rmax-@rmin)/@nclasses-1)&#xa;,&#xa;array_get(generate_series(@rmin,@rmax,(@rmax-@rmin)/@nclasses-1),&#xa;array_find(generate_series(@rmin,@rmax,(@rmax-@rmin)/@nclasses-1),@element)+1)&#xa;),@element is not null)&#xa;,&#xa;-- get the index of initial array to insert at this position&#xa;array_find(&#xa;array_remove_at(generate_series(@rmin,@rmax,(@rmax-@rmin)/@nclasses-1),@nclasses-1)&#xa;,@element))&#xa;&#xa;-- ADD CATEGORY VALUES&#xa;-- concat&#xa;||','||&#xa;-- array of class values&#xa;array_get(generate_series(1,@nclasses),&#xa;-- get the index of initial array to insert at this position&#xa;array_find(&#xa;array_remove_at(generate_series(@rmin,@rmax,(@rmax-@rmin)/@nclasses-1),@nclasses-1)&#xa;,@element))&#xa;&#xa;)) -- closing array nesting&#xa;&#xa;&#xa;))))) -- closing with variable&#xa;"/>
+        <Option name="component_height" type="double" value="216"/>
+        <Option name="component_pos_x" type="double" value="697"/>
+        <Option name="component_pos_y" type="double" value="670"/>
+        <Option name="component_width" type="double" value="304"/>
         <Option name="outputs_collapsed" type="bool" value="true"/>
         <Option name="parameters_collapsed" type="bool" value="true"/>
       </Option>
@@ -74,21 +74,31 @@
           <Option name="color" type="QString" value=""/>
           <Option name="comment" type="Map">
             <Option name="color" type="QString" value=""/>
-            <Option name="component_description" type="QString" value=""/>
-            <Option name="component_height" type="double" value="60"/>
-            <Option name="component_pos_x" type="double" value="0"/>
-            <Option name="component_pos_y" type="double" value="0"/>
-            <Option name="component_width" type="double" value="100"/>
+            <Option name="component_description" type="QString" value="Related: https://gis.stackexchange.com/a/386375/107424"/>
+            <Option name="component_height" type="double" value="30"/>
+            <Option name="component_pos_x" type="double" value="1286.5"/>
+            <Option name="component_pos_y" type="double" value="211"/>
+            <Option name="component_width" type="double" value="321"/>
             <Option name="outputs_collapsed" type="bool" value="true"/>
             <Option name="parameters_collapsed" type="bool" value="true"/>
           </Option>
           <Option name="component_description" type="QString" value="Reclassified_Raster"/>
           <Option name="component_height" type="double" value="30"/>
-          <Option name="component_pos_x" type="double" value="1006"/>
-          <Option name="component_pos_y" type="double" value="497"/>
+          <Option name="component_pos_x" type="double" value="1024"/>
+          <Option name="component_pos_y" type="double" value="512"/>
           <Option name="component_width" type="double" value="200"/>
-          <Option name="default_value" type="invalid"/>
-          <Option name="mandatory" type="bool" value="false"/>
+          <Option name="default_value" type="Map">
+            <Option name="class" type="QString" value="QgsProcessingOutputLayerDefinition"/>
+            <Option name="create_options" type="Map">
+              <Option name="fileEncoding" type="QString" value="System"/>
+            </Option>
+            <Option name="sink" type="Map">
+              <Option name="active" type="bool" value="true"/>
+              <Option name="type" type="int" value="1"/>
+              <Option name="val" type="QString" value=""/>
+            </Option>
+          </Option>
+          <Option name="mandatory" type="bool" value="true"/>
           <Option name="name" type="QString" value="Reclassified_Raster"/>
           <Option name="output_name" type="QString" value="OUTPUT"/>
           <Option name="outputs_collapsed" type="bool" value="true"/>
@@ -180,7 +190,18 @@
     </Option>
     <Option name="native:reclassifybytable_1:Reclassified_Raster" type="Map">
       <Option name="create_by_default" type="bool" value="true"/>
-      <Option name="default" type="invalid"/>
+      <Option name="default" type="QgsProcessingOutputLayerDefinition">
+        <Option type="Map">
+          <Option name="create_options" type="Map">
+            <Option name="fileEncoding" type="QString" value="System"/>
+          </Option>
+          <Option name="sink" type="Map">
+            <Option name="active" type="bool" value="true"/>
+            <Option name="type" type="int" value="1"/>
+            <Option name="val" type="QString" value=""/>
+          </Option>
+        </Option>
+      </Option>
       <Option name="description" type="QString" value="Reclassified_Raster"/>
       <Option name="flags" type="int" value="0"/>
       <Option name="help" type="QString" value=""/>
@@ -215,8 +236,8 @@
       </Option>
       <Option name="component_description" type="QString" value="NClasses"/>
       <Option name="component_height" type="double" value="30"/>
-      <Option name="component_pos_x" type="double" value="295"/>
-      <Option name="component_pos_y" type="double" value="494"/>
+      <Option name="component_pos_x" type="double" value="300"/>
+      <Option name="component_pos_y" type="double" value="477"/>
       <Option name="component_width" type="double" value="200"/>
       <Option name="name" type="QString" value="NClasses"/>
       <Option name="outputs_collapsed" type="bool" value="true"/>
@@ -236,8 +257,8 @@
       </Option>
       <Option name="component_description" type="QString" value="r"/>
       <Option name="component_height" type="double" value="30"/>
-      <Option name="component_pos_x" type="double" value="284"/>
-      <Option name="component_pos_y" type="double" value="390"/>
+      <Option name="component_pos_x" type="double" value="301"/>
+      <Option name="component_pos_y" type="double" value="392"/>
       <Option name="component_width" type="double" value="200"/>
       <Option name="name" type="QString" value="r"/>
       <Option name="outputs_collapsed" type="bool" value="true"/>
