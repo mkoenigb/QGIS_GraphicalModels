@@ -144,7 +144,7 @@
     </Option>
   </Option>
   <Option name="designerParameterValues" type="Map">
-    <Option name="NClasses" type="double" value="10"/>
+    <Option name="NClasses" type="int" value="100"/>
     <Option name="VERBOSE_LOG" type="bool" value="true"/>
     <Option name="native:reclassifybytable_1:Reclassified_Raster" type="QgsProcessingOutputLayerDefinition">
       <Option type="Map">
@@ -167,7 +167,7 @@
   <Option name="model_name" type="QString" value="Raster_Equal_Reclass"/>
   <Option name="parameterDefinitions" type="Map">
     <Option name="NClasses" type="Map">
-      <Option name="data_type" type="int" value="1"/>
+      <Option name="data_type" type="int" value="0"/>
       <Option name="default" type="double" value="10"/>
       <Option name="description" type="QString" value="NClasses"/>
       <Option name="flags" type="int" value="0"/>
@@ -191,7 +191,7 @@
     </Option>
     <Option name="r" type="Map">
       <Option name="default" type="invalid"/>
-      <Option name="description" type="QString" value="r"/>
+      <Option name="description" type="QString" value="Rasterlayer"/>
       <Option name="flags" type="int" value="0"/>
       <Option name="help" type="QString" value=""/>
       <Option name="metadata"/>
@@ -199,7 +199,10 @@
       <Option name="parameter_type" type="QString" value="raster"/>
     </Option>
   </Option>
-  <Option name="parameterOrder"/>
+  <Option name="parameterOrder" type="StringList">
+    <Option type="QString" value="r"/>
+    <Option type="QString" value="NClasses"/>
+  </Option>
   <Option name="parameters" type="Map">
     <Option name="NClasses" type="Map">
       <Option name="color" type="QString" value=""/>
