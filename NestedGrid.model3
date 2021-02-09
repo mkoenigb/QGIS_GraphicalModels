@@ -47,7 +47,7 @@
         </Option>
         <Option name="HSPACING" type="List">
           <Option type="Map">
-            <Option value="Spacing" name="parameter_name" type="QString"/>
+            <Option value="HorizontalSpacing" name="parameter_name" type="QString"/>
             <Option value="0" name="source" type="int"/>
           </Option>
         </Option>
@@ -65,7 +65,7 @@
         </Option>
         <Option name="VSPACING" type="List">
           <Option type="Map">
-            <Option value="Spacing" name="parameter_name" type="QString"/>
+            <Option value="VerticalSpacing" name="parameter_name" type="QString"/>
             <Option value="0" name="source" type="int"/>
           </Option>
         </Option>
@@ -176,7 +176,7 @@
         <Option name="EXPRESSION" type="List">
           <Option type="Map">
             <Option value="2" name="source" type="int"/>
-            <Option value="CASE&#xd;&#xa; WHEN &quot;angle&quot; in (90) --270&#xd;&#xa;  THEN make_line($geometry,make_point($x,$y-@Spacing))&#xd;&#xa; WHEN &quot;angle&quot; in (0) -- 180&#xd;&#xa;  THEN make_line($geometry,make_point($x+@Spacing,$y))&#xd;&#xa;END" name="static_value" type="QString"/>
+            <Option value="CASE&#xd;&#xa; WHEN &quot;angle&quot; in (90) --270&#xd;&#xa;  THEN make_line($geometry,make_point($x,$y-@VerticalSpacing ))&#xd;&#xa; WHEN &quot;angle&quot; in (0) -- 180&#xd;&#xa;  THEN make_line($geometry,make_point($x+@HorizontalSpacing,$y))&#xd;&#xa;END" name="static_value" type="QString"/>
           </Option>
         </Option>
         <Option name="INPUT" type="List">
@@ -564,16 +564,16 @@
       <Option value="Extent" name="name" type="QString"/>
       <Option value="extent" name="parameter_type" type="QString"/>
     </Option>
-    <Option name="Spacing" type="Map">
-      <Option value="0" name="data_type" type="int"/>
+    <Option name="HorizontalSpacing" type="Map">
+      <Option value="1" name="data_type" type="int"/>
       <Option value="10000" name="default" type="double"/>
-      <Option value="Spacing" name="description" type="QString"/>
+      <Option value="Horizontal Spacing" name="description" type="QString"/>
       <Option value="0" name="flags" type="int"/>
       <Option value="" name="help" type="QString"/>
       <Option value="1.7976931348623157e+308" name="max" type="double"/>
       <Option name="metadata"/>
       <Option value="0" name="min" type="double"/>
-      <Option value="Spacing" name="name" type="QString"/>
+      <Option value="HorizontalSpacing" name="name" type="QString"/>
       <Option value="number" name="parameter_type" type="QString"/>
     </Option>
     <Option name="Subgrids" type="Map">
@@ -586,6 +586,18 @@
       <Option name="metadata"/>
       <Option value="0" name="min" type="double"/>
       <Option value="Subgrids" name="name" type="QString"/>
+      <Option value="number" name="parameter_type" type="QString"/>
+    </Option>
+    <Option name="VerticalSpacing" type="Map">
+      <Option value="1" name="data_type" type="int"/>
+      <Option value="10000" name="default" type="double"/>
+      <Option value="Vertical Spacing" name="description" type="QString"/>
+      <Option value="0" name="flags" type="int"/>
+      <Option value="" name="help" type="QString"/>
+      <Option value="1.7976931348623157e+308" name="max" type="double"/>
+      <Option name="metadata"/>
+      <Option value="0" name="min" type="double"/>
+      <Option value="VerticalSpacing" name="name" type="QString"/>
       <Option value="number" name="parameter_type" type="QString"/>
     </Option>
     <Option name="native:refactorfields_1:Parent_Grid" type="Map">
@@ -615,7 +627,13 @@
       <Option value="true" name="supports_non_file_outputs" type="bool"/>
     </Option>
   </Option>
-  <Option name="parameterOrder"/>
+  <Option name="parameterOrder" type="StringList">
+    <Option value="CRS" type="QString"/>
+    <Option value="Extent" type="QString"/>
+    <Option value="HorizontalSpacing" type="QString"/>
+    <Option value="VerticalSpacing" type="QString"/>
+    <Option value="Subgrids" type="QString"/>
+  </Option>
   <Option name="parameters" type="Map">
     <Option name="CRS" type="Map">
       <Option value="" name="color" type="QString"/>
@@ -659,24 +677,24 @@
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
     </Option>
-    <Option name="Spacing" type="Map">
+    <Option name="HorizontalSpacing" type="Map">
       <Option value="" name="color" type="QString"/>
       <Option name="comment" type="Map">
         <Option value="" name="color" type="QString"/>
         <Option value="" name="component_description" type="QString"/>
         <Option value="60" name="component_height" type="double"/>
-        <Option value="516" name="component_pos_x" type="double"/>
-        <Option value="341" name="component_pos_y" type="double"/>
+        <Option value="436" name="component_pos_x" type="double"/>
+        <Option value="415" name="component_pos_y" type="double"/>
         <Option value="100" name="component_width" type="double"/>
         <Option value="true" name="outputs_collapsed" type="bool"/>
         <Option value="true" name="parameters_collapsed" type="bool"/>
       </Option>
-      <Option value="Spacing" name="component_description" type="QString"/>
+      <Option value="HorizontalSpacing" name="component_description" type="QString"/>
       <Option value="30" name="component_height" type="double"/>
-      <Option value="351" name="component_pos_x" type="double"/>
-      <Option value="398" name="component_pos_y" type="double"/>
+      <Option value="312" name="component_pos_x" type="double"/>
+      <Option value="399" name="component_pos_y" type="double"/>
       <Option value="200" name="component_width" type="double"/>
-      <Option value="Spacing" name="name" type="QString"/>
+      <Option value="HorizontalSpacing" name="name" type="QString"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
     </Option>
@@ -698,6 +716,27 @@
       <Option value="229" name="component_pos_y" type="double"/>
       <Option value="200" name="component_width" type="double"/>
       <Option value="Subgrids" name="name" type="QString"/>
+      <Option value="true" name="outputs_collapsed" type="bool"/>
+      <Option value="true" name="parameters_collapsed" type="bool"/>
+    </Option>
+    <Option name="VerticalSpacing" type="Map">
+      <Option value="" name="color" type="QString"/>
+      <Option name="comment" type="Map">
+        <Option value="" name="color" type="QString"/>
+        <Option value="" name="component_description" type="QString"/>
+        <Option value="60" name="component_height" type="double"/>
+        <Option value="392" name="component_pos_x" type="double"/>
+        <Option value="510" name="component_pos_y" type="double"/>
+        <Option value="100" name="component_width" type="double"/>
+        <Option value="true" name="outputs_collapsed" type="bool"/>
+        <Option value="true" name="parameters_collapsed" type="bool"/>
+      </Option>
+      <Option value="VerticalSpacing" name="component_description" type="QString"/>
+      <Option value="30" name="component_height" type="double"/>
+      <Option value="315" name="component_pos_x" type="double"/>
+      <Option value="449" name="component_pos_y" type="double"/>
+      <Option value="200" name="component_width" type="double"/>
+      <Option value="VerticalSpacing" name="name" type="QString"/>
       <Option value="true" name="outputs_collapsed" type="bool"/>
       <Option value="true" name="parameters_collapsed" type="bool"/>
     </Option>
